@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+  <name>NCXRemove</name>
+  <type>output</type>
+  <author>DiapDealer</author>
+  <description>Remove NCX from EPUB3s</description>
+  <engine>python3.4</engine>
+  <version>0.1.0</version>
+  <oslist>osx,unx,win</oslist>
+  <autostart>true</autostart>
+  <autoclose>false</autoclose>
+</plugin>
