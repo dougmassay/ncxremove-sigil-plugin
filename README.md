@@ -12,7 +12,7 @@ Links
 
 * Sigil website is at <http://sigil-ebook.com>
 * Sigil support forums are at <http://www.mobileread.com/forums/forumdisplay.php?f=203>
-* NCXRemove plugin MobileRead support thread: <http://www.mobileread.com/forums/>
+* NCXRemove plugin MobileRead support thread: <https://www.mobileread.com/forums/showthread.php?t=284445>
 
 Building
 ========
