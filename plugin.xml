@@ -5,7 +5,7 @@
   <author>DiapDealer</author>
   <description>Remove NCX from EPUB3s</description>
   <engine>python3.4</engine>
-  <version>0.1.0</version>
+  <version>0.1.1</version>
   <oslist>osx,unx,win</oslist>
   <autostart>true</autostart>
   <autoclose>false</autoclose>

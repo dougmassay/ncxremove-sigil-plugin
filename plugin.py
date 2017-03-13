@@ -127,7 +127,7 @@ def run(bk):
             if line.lstrip().startswith('<spine') and line.find(spineattr) is not -1:
                 line = line.replace(spineattr, '')
             if not skip:
-                newopf += line
+                newopf += line + '\n'
                 if _DEBUG_:
                     print(line)
         # Write new OPF to temp directory

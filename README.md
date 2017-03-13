@@ -3,8 +3,6 @@ NCXRemove (A Sigil Plugin)
 
 Export an EPUB3 with NCX removed
 
-A Sigil plugin used to remove the NCX file from an EPUB3.
-
 **NOTE: this plugin periodically checks for updated versions by connecting to this Github repository (see the configurable preferences section below to disable this behavior)**
 
 Links
@@ -23,7 +21,7 @@ First, clone the repo:
 
 To create the plugin zip file, run the buildplugin.py script (root of the repository tree) with Python (2 or 3)
 
-    $python buildplugin.py
+    $python ./buildplugin (or just ./buildplugin if Python is on your PATH)
 
 This will create the NCXRemove_vX.X.X.zip file that can then be installed into Sigil's plugin manager.
 
@@ -31,7 +29,7 @@ Using NCXRemove
 =================
 If you're using Sigil v0.9.0 or later, all dependencies should already be met.
 
-Linux users will have to make sure that the Tk graphical python module (or the PyQt5 module) is present if it's not already.  On Debian-based flavors this can be done with "sudo apt-get install python-tk" for python 2.7 or "sudo apt-get install python3-tk" for Python 3.4.
+Linux users will have to make sure that the PyQt5 python module (or the Tk python module)  is present if it's not already. On Debian-based flavors this can be done with "sudo apt-get install python3-pyqt5" (or "sudo apt-get install python3-tk") for Python 3.4.
 
 * **Note:** Do not rename any Sigil plugin zip files before attempting to install them
 
@@ -58,7 +56,7 @@ The core plugin files (this is where most contributors will spend their time) ar
 
 Files used for building/maintaining the plugin:
 
-    > buildplugin.py  -- this is used to build the plugin.
+    > buildplugin  -- this is used to build the plugin.
     > setup.cfg -- used for flake8 style checking. Use it to see if your code complies.
     > checkversion.xml -- used by automatic update checking.
 

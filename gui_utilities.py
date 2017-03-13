@@ -14,6 +14,22 @@ def fileChooser(fname, initial_dir, gui='tkinter', title='Save EPUB as', ext='.e
 
         localRoot = Tk()
         localRoot.withdraw()
+
+        if sys.platform.startswith('darwin'):
+            # localRoot is is an empty topmost root window that is hidden by withdrawing it
+            # but localRoot needs to be centred, and lifted and focus_force used
+            # so that its child dialog will inherit focus upon launch
+            localRoot.overrideredirect(True)
+            # center on screen but make size 0 to hide the empty localRoot
+            w = localRoot.winfo_screenwidth()
+            h = localRoot.winfo_screenheight()
+            x = int(w/2)
+            y = int(h/2)
+            localRoot.geometry('%dx%d+%d+%d' % (0, 0, x, y))
+            localRoot.deiconify()
+            localRoot.lift()
+            localRoot.focus_force()
+
         file_opt = {}
         file_opt['parent'] = localRoot
         file_opt['title']= title
@@ -21,8 +37,10 @@ def fileChooser(fname, initial_dir, gui='tkinter', title='Save EPUB as', ext='.e
         file_opt['initialfile'] = fname
         file_opt['initialdir'] = initial_dir
         file_opt['filetypes'] = [('EPUB', ('.epub'))]
+
+        fpath = asksaveasfilename(**file_opt)
         localRoot.quit()
-        return asksaveasfilename(**file_opt)
+        return fpath
     elif gui == 'pyqt':
         from PyQt5.QtWidgets import QApplication, QWidget, QFileDialog
 
@@ -32,9 +50,9 @@ def fileChooser(fname, initial_dir, gui='tkinter', title='Save EPUB as', ext='.e
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
         initial_name = os.path.join(initial_dir, fname)
-        fileName, _ = QFileDialog.getSaveFileName(w,'Save EPUB as:', initial_name,
+        fpath, _ = QFileDialog.getSaveFileName(w,'Save EPUB as:', initial_name,
                                                   'EPUB (*.epub )', options=options)
-        return fileName
+        return fpath
 
 def update_msgbox(title, msg, gui='tkinter'):
     if gui == 'tkinter':
