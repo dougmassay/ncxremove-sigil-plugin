@@ -67,7 +67,7 @@ Feel free to fork the repository and submit pull requests (or just use it privat
 License Information
 =======
 
-###NCXRemove (the Sigil plugin)
+### NCXRemove
 
 Available under the terms of the [MIT license](http://opensource.org/licenses/mit-license.php)
 
