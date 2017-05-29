@@ -54,7 +54,7 @@ The core plugin files (this is where most contributors will spend their time) ar
     > updatecheck.py
 
 
-Files used for building/maintaining the plugin:
+Files used for building/maintaining the plugin: 
 
     > buildplugin  -- this is used to build the plugin.
     > setup.cfg -- used for flake8 style checking. Use it to see if your code complies.
